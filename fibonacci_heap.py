@@ -65,6 +65,7 @@ class FibonacciHeap(Heap):
                 min_value = value
             elif value < min_value:
                 min_value = value
+            
         return min_value
 
     def delete_min(self) -> int:
@@ -91,24 +92,20 @@ heap.insert(15)
 heap.insert(7)
 heap.insert(19)
 heap.insert(20)
-heap.find_min()
+print("Arbre 1 crée : ", heap.trees)
+print("Minimum à supprimer : ", heap.find_min())
 heap.delete_min()
+print('----------------------------')
 
 # added_tree
 heap2 = FibonacciHeap()
 heap2.insert(2)
 heap2.insert(84)
 heap2.insert(50)
-heap2.find_min()
-heap2.delete_min()
-
-heap2.merge(heap2)
-
-
-print("Arbre 1 crée : ", heap.trees)
-print("Minimum à supprimer : ", heap.find_min())
-print('----------------------------')
 print("Arbre 2 crée : ", heap2.trees)
 print("Minimum à supprimer : ", heap2.find_min())
+heap2.delete_min()
+heap2.merge(heap2)
+
 print('----------------------------')
 print("Fusion des arbres : ", heap2.merge(heap))
