@@ -95,6 +95,7 @@ heap.insert(20)
 print("Arbre 1 crée : ", heap.trees)
 print("Minimum à supprimer : ", heap.find_min())
 heap.delete_min()
+print("Contenu de l'arbre après suppression : ", heap.trees )
 print('----------------------------')
 
 # added_tree
@@ -105,6 +106,7 @@ heap2.insert(50)
 print("Arbre 2 crée : ", heap2.trees)
 print("Minimum à supprimer : ", heap2.find_min())
 heap2.delete_min()
+print("Contenu de l'arbre après suppression : ", heap2.trees )
 heap2.merge(heap2)
 
 print('----------------------------')
