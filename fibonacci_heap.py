@@ -49,15 +49,11 @@ class FibonacciHeap(Heap):
         self.trees = []
         self.branch = None
    
-    
-
     def insert(self, value: int) -> None:
         """
         Ajoute une valeur dans l'arbre
         """
         self.trees.append(value)
-
-     
 
     def find_min(self) -> int:
         """
@@ -69,10 +65,7 @@ class FibonacciHeap(Heap):
                 min_value = value
             elif value < min_value:
                 min_value = value
-        print(min_value)
         return min_value
-
-       
 
     def delete_min(self) -> int:
         """
@@ -81,31 +74,41 @@ class FibonacciHeap(Heap):
         min_value = self.find_min()
         if min_value is not None:
             self.trees.remove(min_value)
-        pass
-
+        
     def merge(self, fibonnaci_heap: Heap) -> None:
         """
         Fusionne deux arbres
         """
-        new = self.trees + heap
-        print(new)
-        pass
+        main_tree = heap.trees
+        added_tree = heap2.trees
+        merged_trees = added_tree + main_tree
 
+        return merged_trees 
 
+# main_tree
 heap = FibonacciHeap()
-heap.insert(5)
-heap.insert(1)
-heap.insert(10)
-heap.insert(0)
-heap.insert(42)
 heap.insert(15)
 heap.insert(7)
 heap.insert(19)
 heap.insert(20)
-heap.insert(2)
-heap.insert(84)
-heap.insert(50)
 heap.find_min()
 heap.delete_min()
 
-heap.merge(heap)
+# added_tree
+heap2 = FibonacciHeap()
+heap2.insert(2)
+heap2.insert(84)
+heap2.insert(50)
+heap2.find_min()
+heap2.delete_min()
+
+heap2.merge(heap2)
+
+
+print("Arbre 1 crée : ", heap.trees)
+print("Minimum à supprimer : ", heap.find_min())
+print('----------------------------')
+print("Arbre 2 crée : ", heap2.trees)
+print("Minimum à supprimer : ", heap2.find_min())
+print('----------------------------')
+print("Fusion des arbres : ", heap2.merge(heap))
